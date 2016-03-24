@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>Angel.SR6</version>
+        <version>Brixton.RC1</version>
     </parent>
 
     <properties>
@@ -19,6 +19,17 @@
         <docker.plugin.version>0.4.3</docker.plugin.version>
         <docker.image.prefix>xenabiz</docker.image.prefix>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <distributionManagement>
         <repository>
