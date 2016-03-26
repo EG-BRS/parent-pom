@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>dk.xena</groupId>
+    <groupId>biz.xena</groupId>
     <artifactId>xena-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
-    <parent>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>Brixton.RC1</version>
-    </parent>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <docker.plugin.version>0.4.3</docker.plugin.version>
-        <docker.image.prefix>xenabiz</docker.image.prefix>
     </properties>
 
     <repositories>
@@ -54,36 +46,41 @@
         </extensions>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.6.201602180812</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>repackage</goal>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.plugin.version}</version>
-                <configuration>
-                    <serverId>docker-hub</serverId>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                    <imageTags>
-                        <imageTag>${project.version}</imageTag>
-                    </imageTags>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+    
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/sun_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </reporting>
+    
+    <modules>
+        <module>xena-cloud-parent-pom</module>
+    </modules>
 </project>
