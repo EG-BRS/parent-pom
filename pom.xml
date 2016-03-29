@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>biz.xena</groupId>
     <artifactId>xena-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -27,6 +27,7 @@
         <connection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</connection>
         <developerConnection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</developerConnection>
         <url>https://github.com/xenabiz/xena-parent-pom</url>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
@@ -80,6 +81,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            
+            <plugin>
+                <!-- REQUIRED FOR VERSIONING TO WORK WHEN RELEASE OCCURS -->
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <preparationGoals>clean install</preparationGoals>
+                </configuration>
             </plugin>
         </plugins>
     </build>
