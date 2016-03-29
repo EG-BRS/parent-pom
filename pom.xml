@@ -84,5 +84,6 @@
     
     <modules>
         <module>xena-cloud-parent-pom</module>
+        <module>xena-boot-parent</module>
     </modules>
 </project>
