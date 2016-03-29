@@ -14,6 +14,21 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Michael Krog</name>
+            <organization>xenabiz</organization>
+            <organizationUrl>http://xena.biz</organizationUrl>
+            <url>https://github.com/michaelkrog</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</connection>
+        <developerConnection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</developerConnection>
+        <url>https://github.com/xenabiz/xena-parent-pom</url>
+    </scm>
+
     <repositories>
         <repository>
             <id>spring-milestones</id>
