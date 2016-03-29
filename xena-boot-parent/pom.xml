@@ -4,7 +4,7 @@
     <parent>
         <groupId>biz.xena</groupId>
         <artifactId>xena-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <artifactId>xena-boot-parent</artifactId>
     <packaging>pom</packaging>
