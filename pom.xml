@@ -38,6 +38,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>xena-public</id>
+            <name>Xena Public Repository</name>
+            <url>http://apaq-repository-public.s3-website-eu-west-1.amazonaws.com</url>
+        </repository>
     </repositories>
 
     <!--distributionManagement>
