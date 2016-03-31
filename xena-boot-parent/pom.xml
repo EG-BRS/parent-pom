@@ -61,6 +61,7 @@
                             <imageTags>
                                 <imageTag>${project.version}</imageTag>
                             </imageTags>
+                            <forceTags>true</forceTags>
                             <resources>
                                 <resource>
                                     <targetPath>/</targetPath>
@@ -102,6 +103,7 @@
                             <imageTags>
                                 <imageTag>${project.version}</imageTag>
                             </imageTags>
+                            <forceTags>true</forceTags>
                             <resources>
                                 <resource>
                                     <targetPath>/</targetPath>
