@@ -40,7 +40,7 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
+    <!--distributionManagement>
         <repository>
             <id>aws-release</id>
             <name>Apaq Release Repository</name>
@@ -51,7 +51,43 @@
             <name>Apaq Snapshot Repository</name>
             <url>s3://apaq-repository/snapshot</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement-->
+    
+    <profiles>
+        <profile>
+            <id>distribute-private</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>aws-release</id>
+                    <name>Apaq Release Repository</name>
+                    <url>s3://apaq-repository/release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>aws-snapshot</id>
+                    <name>Apaq Snapshot Repository</name>
+                    <url>s3://apaq-repository/snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>distribute-public</id>
+            <distributionManagement>
+                <repository>
+                    <id>aws-release</id>
+                    <name>Apaq Release Repository</name>
+                    <url>s3://apaq-repository-public/release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>aws-snapshot</id>
+                    <name>Apaq Snapshot Repository</name>
+                    <url>s3://apaq-repository-public/snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 
     <build>
         <extensions>
