@@ -84,6 +84,17 @@
                                     <dockerDirectory>${project.basedir}/src/main/docker/amd64</dockerDirectory>
                                 </configuration>
                             </execution>
+                            
+                            <execution>
+                                <id>amd64-push</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>push</goal>
+                                </goals>
+                                <configuration>
+                                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                                </configuration>
+                            </execution> 
                    
                         </executions>
                     </plugin>
@@ -125,6 +136,16 @@
                                     <dockerDirectory>${project.basedir}/src/main/docker/rpi</dockerDirectory>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>rpi-push</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>push</goal>
+                                </goals>
+                                <configuration>
+                                    <imageName>${docker.image.prefix}/${project.artifactId}-rpi</imageName>
+                                </configuration>
+                            </execution> 
                         </executions>
                     </plugin>
                 </plugins>
