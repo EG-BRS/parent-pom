@@ -4,7 +4,7 @@
     <parent>
         <groupId>biz.xena</groupId>
         <artifactId>xena-parent</artifactId>
-        <version>1.0.4-SNAPSHOT</version>
+        <version>1.0.4</version>
     </parent>
     <groupId>biz.xena</groupId>
     <artifactId>xena-cloud-parent</artifactId>
