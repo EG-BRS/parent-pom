@@ -15,13 +15,37 @@ The Xena parent POM provides default configuration for Maven builds.
 
 How to use it?
 --------------
-Start out by adding the parent configuration to your pom.
+Start out by adding the public repository to settings.xml
+```xml
+    <profiles>
+   
+        <profile>
+            <id>xena</id>
+            <repositories>
+                <repository>
+                    <id>xena-public</id>
+                    <name>Xenas public repo</name>
+                    <url>http://apaq-repository-public.s3-website-eu-west-1.amazonaws.com/release</url>
+                </repository>
+            </repositories>
+        </profile>
+   
+    </profiles>
+ 
+    <activeProfiles>
+        <activeProfile>xena</activeProfile>
+    </activeProfiles>  
+ ```
 
+The add the parent configuration to your pom.
+
+```xml
     <parent>
       <groupId>dk.xena</groupId>
       <artifactId>xena-parent</artifactId>
       <version>1.0.0</version>
     </parent>
+```
 
 The pom includes properties which allow various build configuration to be 
 customized.  For example, to override the default version of the
