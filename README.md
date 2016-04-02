@@ -43,7 +43,7 @@ The add the parent configuration to your pom.
     <parent>
       <groupId>dk.xena</groupId>
       <artifactId>xena-parent</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.4</version>
     </parent>
 ```
 
