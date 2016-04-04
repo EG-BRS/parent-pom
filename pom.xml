@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>biz.xena</groupId>
     <artifactId>xena-parent</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -27,7 +27,7 @@
         <connection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</connection>
         <developerConnection>scm:git:xenaci@github.com:xenabiz/xena-parent-pom.git</developerConnection>
         <url>https://github.com/xenabiz/xena-parent-pom</url>
-      <tag>xena-parent-1.0.5</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <repositories>
