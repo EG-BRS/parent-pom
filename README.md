@@ -7,8 +7,7 @@ What is it?
 The Xena parent POM provides default configuration for Maven builds.
  
 * Recommended/Default versions for the most commonly used Maven plugins
-* Manifest configuration for the jar and assembly plugins
-* Profiles for generating source jars, and enforcing a minimum versions of 
+* Profiles for generating docker builds, and enforcing a minimum versions of 
   Java and Maven
 * Distribution Management and other configuration for deploying to the 
   Xena Maven repositories
