@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.previsto</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.12-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -27,7 +27,7 @@
         <connection>scm:git:https://github.com/CodeZooDK/parent-pom.git</connection>
         <developerConnection>scm:git:xenaci@github.com:CodeZooDK/parent-pom.git</developerConnection>
         <url>https://github.com/CodeZooDK/parent-pom</url>
-      <tag>parent-1.0.11</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <repositories>
