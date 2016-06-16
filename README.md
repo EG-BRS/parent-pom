@@ -1,16 +1,16 @@
-Xena Parent POM
+CodeZoo Parent POM
 =================
-The parent Maven POM for Xena Maven Projects.
+The parent Maven POM for CodeZoo Maven Projects.
 
 What is it?
 -----------
-The Xena parent POM provides default configuration for Maven builds.
+The CodeZoo parent POM provides default configuration for Maven builds.
  
 * Recommended/Default versions for the most commonly used Maven plugins
 * Profiles for generating docker builds, and enforcing a minimum versions of 
   Java and Maven
 * Distribution Management and other configuration for deploying to the 
-  Xena Maven repositories
+  CodeZoo Maven repositories
 
 How to use it?
 --------------
@@ -22,8 +22,8 @@ Start out by adding the public repository to settings.xml
             <id>xena</id>
             <repositories>
                 <repository>
-                    <id>xena-public</id>
-                    <name>Xenas public repo</name>
+                    <id>codezoo-public</id>
+                    <name>CodeZoos public repo</name>
                     <url>http://apaq-repository-public.s3-website-eu-west-1.amazonaws.com/release</url>
                 </repository>
             </repositories>
@@ -32,7 +32,7 @@ Start out by adding the public repository to settings.xml
     </profiles>
  
     <activeProfiles>
-        <activeProfile>xena</activeProfile>
+        <activeProfile>codezoo</activeProfile>
     </activeProfiles>  
  ```
 
@@ -40,8 +40,8 @@ The add the parent configuration to your pom.
 
 ```xml
     <parent>
-      <groupId>dk.xena</groupId>
-      <artifactId>xena-parent</artifactId>
+      <groupId>dk.codezoo</groupId>
+      <artifactId>parent</artifactId>
       <version>1.0.4</version>
     </parent>
 ```

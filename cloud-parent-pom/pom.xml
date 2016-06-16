@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.previsto</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.10-SNAPSHOT</version>
+        <version>1.0.11-SNAPSHOT</version>
     </parent>
     <groupId>biz.xena</groupId>
     <artifactId>cloud-parent</artifactId>
