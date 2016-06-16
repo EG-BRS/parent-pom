@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.previsto</groupId>
-    <artifactId>parent</artifactId>
-    <version>1.0.10-SNAPSHOT</version>
+    <groupId>biz.xena</groupId>
+    <artifactId>xena-parent</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -25,10 +25,10 @@
 
     <scm>
         <connection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</connection>
-        <developerConnection>scm:git:xenaci@github.com:xenabiz/xena-parent-pom.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</developerConnection>
         <url>https://github.com/xenabiz/xena-parent-pom</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <repositories>
         <repository>
@@ -39,14 +39,9 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>aws-release</id>
-            <name>Apaq Release Repository</name>
-            <url>s3://apaq-repository/release</url>
-        </repository>
     </repositories>
 
-    <!--distributionManagement>
+    <distributionManagement>
         <repository>
             <id>aws-release</id>
             <name>Apaq Release Repository</name>
@@ -57,43 +52,7 @@
             <name>Apaq Snapshot Repository</name>
             <url>s3://apaq-repository/snapshot</url>
         </snapshotRepository>
-    </distributionManagement-->
-    
-    <profiles>
-        <profile>
-            <id>distribute-private</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>aws-release</id>
-                    <name>Apaq Release Repository</name>
-                    <url>s3://apaq-repository/release</url>
-                </repository>
-                <snapshotRepository>
-                    <id>aws-snapshot</id>
-                    <name>Apaq Snapshot Repository</name>
-                    <url>s3://apaq-repository/snapshot</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>distribute-public</id>
-            <distributionManagement>
-                <repository>
-                    <id>aws-release</id>
-                    <name>Apaq Release Repository</name>
-                    <url>s3://apaq-repository-public/release</url>
-                </repository>
-                <snapshotRepository>
-                    <id>aws-snapshot</id>
-                    <name>Apaq Snapshot Repository</name>
-                    <url>s3://apaq-repository-public/snapshot</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-    </profiles>
+    </distributionManagement>
 
     <build>
         <extensions>
@@ -124,18 +83,13 @@
                 </executions>
             </plugin>
             
-            <!--plugin>
+            <plugin>
+                <!-- REQUIRED FOR VERSIONING TO WORK WHEN RELEASE OCCURS -->
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <preparationGoals>clean install</preparationGoals>
                 </configuration>
-            </plugin-->
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
@@ -154,8 +108,7 @@
     </reporting>
     
     <modules>
-        <module>boot-parent</module>
-        <module>cloud-parent-pom</module>
+        <module>xena-cloud-parent-pom</module>
+        <module>xena-boot-parent</module>
     </modules>
-    <name>CodeZoo Parent POM</name>
 </project>
