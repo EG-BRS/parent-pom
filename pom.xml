@@ -17,16 +17,16 @@
     <developers>
         <developer>
             <name>Michael Krog</name>
-            <organization>xenabiz</organization>
-            <organizationUrl>http://xena.biz</organizationUrl>
+            <organization>CodeZoo</organization>
+            <organizationUrl>http://codezoo.dk</organizationUrl>
             <url>https://github.com/michaelkrog</url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/xenabiz/xena-parent-pom.git</connection>
-        <developerConnection>scm:git:xenaci@github.com:xenabiz/xena-parent-pom.git</developerConnection>
-        <url>https://github.com/xenabiz/xena-parent-pom</url>
+        <connection>scm:git:https://github.com/CodeZoo/parent-pom.git</connection>
+        <developerConnection>scm:git:xenaci@github.com:CodeZoo/parent-pom.git</developerConnection>
+        <url>https://github.com/CodeZoo/parent-pom</url>
       <tag>HEAD</tag>
   </scm>
 
