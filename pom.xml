@@ -156,6 +156,7 @@
     <modules>
         <module>boot-parent</module>
         <module>cloud-parent-pom</module>
+        <module>codezoo-core</module>
     </modules>
     <name>CodeZoo Parent POM</name>
 </project>
