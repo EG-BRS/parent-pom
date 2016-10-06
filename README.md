@@ -42,7 +42,7 @@ The add the parent configuration to your pom.
     <parent>
       <groupId>dk.codezoo</groupId>
       <artifactId>parent</artifactId>
-      <version>1.0.4</version>
+      <version>1.1.0</version>
     </parent>
 ```
 
