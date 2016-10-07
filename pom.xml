@@ -25,11 +25,11 @@
 
     <scm>
         <connection>scm:git:https://github.com/CodeZooDK/parent-pom.git</connection>
-        <developerConnection>scm:git:xenaci@github.com:CodeZooDK/parent-pom.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:CodeZooDK/parent-pom.git</developerConnection>
         <url>https://github.com/CodeZooDK/parent-pom</url>
-      <tag>HEAD</tag>
-  </scm>
-
+        <tag>HEAD</tag>
+    </scm>
+    
     <repositories>
         <repository>
             <id>spring-milestones</id>
