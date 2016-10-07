@@ -13,7 +13,7 @@
         <docker.plugin.version>0.4.3</docker.plugin.version>
         <docker.image.prefix>codezoo</docker.image.prefix>
 
-        <spring-boot.version>1.3.3.RELEASE</spring-boot.version>
+        <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
         
         <docker.host.rpi>https://a2.xena:2376</docker.host.rpi>
     </properties>
