@@ -46,19 +46,6 @@
         </repository>
     </repositories>
 
-    <!--distributionManagement>
-        <repository>
-            <id>aws-release</id>
-            <name>Apaq Release Repository</name>
-            <url>s3://apaq-repository/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>aws-snapshot</id>
-            <name>Apaq Snapshot Repository</name>
-            <url>s3://apaq-repository/snapshot</url>
-        </snapshotRepository>
-    </distributionManagement-->
-    
     <profiles>
         <profile>
             <id>distribute-private</id>
