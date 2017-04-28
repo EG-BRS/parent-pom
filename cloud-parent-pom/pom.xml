@@ -45,7 +45,11 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>
+<<<<<<< HEAD
                 <version>Brixton.SR6</version>
+=======
+                <version>Camden.SR3</version>
+>>>>>>> 9cb38780e92f3c41786053475cd77f6e23eb40bc
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
