@@ -2,3 +2,5 @@ nbactions.xml
 /target/
 /xena-cloud-parent-pom/target/
 /codezoo-core/target/
+.idea
+**/*.iml
