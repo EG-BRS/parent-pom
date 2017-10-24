@@ -33,7 +33,7 @@ node {
 
 
         stage('Tag it') {
-            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'v', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
                 withMaven(
                     maven: 'Maven 3',
                     mavenSettingsConfig: 'maven_settings',
