@@ -24,20 +24,33 @@ node {
 
     if(env.BRANCH_NAME == "master") {
 
+        stage("Set Version and Tag it") {
+          def originalV = version();
+          def major = originalV[1];
+          def minor = originalV[2];
+          def patch  = Integer.parseInt(originalV[3]) + 1;
+          def v = "${major}.${minor}.${patch}"
+          if (v) {
+            echo "Building version ${v}"
+          }
+          sh "mvn -B versions:set -DgenerateBackupPoms=false -DnewVersion=${v}"
+          sh 'git add .'
+          sh "git commit -m 'Raise version'"
+          sh "git tag v${v}"
+        }
 
-        stage('Tag it') {
+        stage('Release it') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-                sh('git checkout master')
-                sh('git pull https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/EG-BRS/parent-pom.git')
-
+                sh "mvn -B -DskipTests clean deploy"
+                
                 withMaven(
                     maven: 'Maven 3',
                     mavenSettingsConfig: 'maven_settings',
                     jdk: 'JDK 8') {
 
 
-                    sh "mvn release:prepare -Dusername=${GIT_USERNAME} -Dpassword=${GIT_PASSWORD}"
-                    sh "mvn -B release:clean release:prepare release:perform -Dusername=${GIT_USERNAME} -Dpassword=${GIT_PASSWORD}"
+                    sh "git push origin " + env.BRANCH_NAME
+                    sh "git push origin v${v}"
 
                 }
             }
