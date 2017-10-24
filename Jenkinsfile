@@ -54,8 +54,8 @@ node {
 
                     sh "mvn -B -DskipTests clean deploy"
 
-                    sh "git push origin " + env.BRANCH_NAME
-                    sh "git push origin v${v}"
+                    //sh "git push origin " + env.BRANCH_NAME
+                    sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/EG-BRS/parent-pom v${v}"
 
                 }
             }
