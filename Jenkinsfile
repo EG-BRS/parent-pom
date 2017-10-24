@@ -12,8 +12,6 @@ node {
 
     stage('Build') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-            sh('git checkout master')
-            sh('git pull https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/EG-BRS/parent-pom.git')
 
             withMaven(
                 maven: 'Maven 3',
@@ -34,6 +32,9 @@ node {
 
         stage('Tag it') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+                sh('git checkout master')
+                sh('git pull https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/EG-BRS/parent-pom.git')
+
                 withMaven(
                     maven: 'Maven 3',
                     mavenSettingsConfig: 'maven_settings',
