@@ -42,7 +42,7 @@ node {
         stage('Release it') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
                 sh "mvn -B -DskipTests clean deploy"
-                
+
                 withMaven(
                     maven: 'Maven 3',
                     mavenSettingsConfig: 'maven_settings',
@@ -60,4 +60,9 @@ node {
     }
 
 
+}
+
+def version() {
+    def matcher = readFile('pom.xml') =~ '<version>(\\d*)\\.(\\d*)\\.(\\d*)(-SNAPSHOT)*</version>'
+    matcher ? matcher[0] : null
 }
