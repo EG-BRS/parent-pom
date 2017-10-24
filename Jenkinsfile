@@ -5,6 +5,8 @@ node {
 
     }
 
+    def v;
+
     stage('Build') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github_credentials', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
 
@@ -24,6 +26,7 @@ node {
 
     if(env.BRANCH_NAME == "master") {
 
+
         stage("Set Version and Tag it") {
             withMaven(
                             maven: 'Maven 3',
@@ -33,7 +36,7 @@ node {
                 def major = originalV[1];
                 def minor = originalV[2];
                 def patch  = Integer.parseInt(originalV[3]) + 1;
-                def v = "${major}.${minor}.${patch}"
+                v = "${major}.${minor}.${patch}"
                 if (v) {
                     echo "Building version ${v}"
                 }
