@@ -1,8 +1,3 @@
-def projectName = "parent-pom";
-def majorVersion = 3;
-def minorVersion = 0;
-def buildVersion = env.BUILD_NUMBER;
-def version = "$majorVersion.$minorVersion.$buildVersion";
 
 node {
     stage('Checkout') {
