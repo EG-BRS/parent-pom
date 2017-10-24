@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>dk.codezoo</groupId>
+    <groupId>dk.eg</groupId>
     <artifactId>parent</artifactId>
     <version>1.3.2-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -17,16 +17,16 @@
     <developers>
         <developer>
             <name>Michael Krog</name>
-            <organization>CodeZoo</organization>
-            <organizationUrl>http://codezoo.dk</organizationUrl>
+            <organization>Eg</organization>
+            <organizationUrl>http://eg.dk</organizationUrl>
             <url>https://github.com/michaelkrog</url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/CodeZooDK/parent-pom.git</connection>
-        <developerConnection>scm:git:git@github.com:CodeZooDK/parent-pom.git</developerConnection>
-        <url>https://github.com/CodeZooDK/parent-pom</url>
+        <connection>scm:git:https://github.com/EG-BRS/parent-pom.git</connection>
+        <developerConnection>scm:git:git@github.com:EG-BRS/parent-pom.git</developerConnection>
+        <url>https://github.com/EG-BRS/parent-pom</url>
         <tag>parent-1.3.0</tag>
     </scm>
     
@@ -39,57 +39,23 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>aws-release</id>
-            <name>Apaq Release Repository</name>
-            <url>s3://apaq-repository/release</url>
-        </repository>
     </repositories>
 
-    <profiles>
-        <profile>
-            <id>distribute-private</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>aws-release</id>
-                    <name>Apaq Release Repository</name>
-                    <url>s3://apaq-repository/release</url>
-                </repository>
-                <snapshotRepository>
-                    <id>aws-snapshot</id>
-                    <name>Apaq Snapshot Repository</name>
-                    <url>s3://apaq-repository/snapshot</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>distribute-public</id>
-            <distributionManagement>
-                <repository>
-                    <id>aws-release</id>
-                    <name>Apaq Release Repository</name>
-                    <url>s3://apaq-repository-public/release</url>
-                </repository>
-                <snapshotRepository>
-                    <id>aws-snapshot</id>
-                    <name>Apaq Snapshot Repository</name>
-                    <url>s3://apaq-repository-public/snapshot</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-    </profiles>
+    <distributionManagement>
+        <repository>
+            <id>eg-release</id>
+            <name>EG's Maven Release</name>
+            <url>https://sonatype.egone.dk/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>eg-snapshot</id>
+            <name>EG Snapshot Repository</name>
+            <url>https://sonatype.egone.dk/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -144,5 +110,5 @@
         <module>boot-parent</module>
         <module>cloud-parent-pom</module>
     </modules>
-    <name>CodeZoo Parent POM</name>
+    <name>EG Parent POM</name>
 </project>
