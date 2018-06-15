@@ -73,6 +73,7 @@ node {
 def version() {
     def pom = readMavenPom file: 'pom.xml'
     def tmp = pom.version
+    echo "Resolved version ${tmp}"
     tmp = tmp.replaceAll("-SNAPSHOT", "")
-    return tmp.split(".");
+    return tmp.split("\\.");
 }
