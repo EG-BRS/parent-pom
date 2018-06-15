@@ -74,5 +74,5 @@ def version() {
     def pom = readMavenPom file: 'pom.xml'
     def tmp = pom.version
     tmp = tmp.replaceAll("-SNAPSHOT", "")
-    return v.split(".");
+    return tmp.split(".");
 }
