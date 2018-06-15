@@ -33,9 +33,9 @@ node {
                             mavenSettingsConfig: 'maven_settings',
                             jdk: 'JDK 8') {
                 def originalV = version();
-                def major = originalV[1];
-                def minor = originalV[2];
-                def patch  = originalV[3];
+                def major = originalV[0];
+                def minor = originalV[1];
+                def patch  = originalV[2];
                 v = "${major}.${minor}.${patch}"
                 if (v) {
                     echo "Building version ${v}"
