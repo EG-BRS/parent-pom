@@ -42,7 +42,7 @@ The add the parent configuration to your pom.
     <parent>
       <groupId>dk.eg</groupId>
       <artifactId>parent</artifactId>
-      <version>1.3.1</version>
+      <version>1.3.6</version>
     </parent>
 ```
 

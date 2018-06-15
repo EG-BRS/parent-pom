@@ -13,7 +13,7 @@
     <properties>
         <docker.plugin.version>0.4.13</docker.plugin.version>
         <docker.image.prefix>eg-brs</docker.image.prefix>
-        <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.14.RELEASE</spring-boot.version>
         <docker.host.rpi>https://a2.xena:2376</docker.host.rpi>
         <docs.snippets.directory>${project.build.directory}/generated-snippets</docs.snippets.directory>
     </properties>
@@ -45,7 +45,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>
-                <version>Camden.SR3</version>
+                <version>Edgware.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
