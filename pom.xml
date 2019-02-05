@@ -45,12 +45,12 @@
         <repository>
             <id>eg-release</id>
             <name>EG's Maven Release</name>
-            <url>https://sonatype.egone.dk/repository/maven-releases/</url>
+            <url>https://nexus.codezoo.io/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>eg-snapshot</id>
             <name>EG Snapshot Repository</name>
-            <url>https://sonatype.egone.dk/repository/maven-snapshots/</url>
+            <url>https://nexus.codezoo.io/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
