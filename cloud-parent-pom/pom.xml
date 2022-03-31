@@ -13,7 +13,7 @@
     <properties>
         <docker.plugin.version>1.2.0</docker.plugin.version>
         <docker.image.prefix>eg-brs</docker.image.prefix>
-        <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
         <spring-rest-docs.version>2.0.3.RELEASE</spring-rest-docs.version>
         <docker.host.rpi>https://a2.xena:2376</docker.host.rpi>
         <docs.snippets.directory>${project.build.directory}/generated-snippets</docs.snippets.directory>
